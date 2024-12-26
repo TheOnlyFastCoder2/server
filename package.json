@@ -1,15 +1,22 @@
 {
-  "name": "server",
-  "version": "1.0.0",
+  "name": "backend",
+  "version": "1.0.50",
   "scripts": {
-    "start": "npx json-server --port 8080 db.json"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "bun run --watch src/index.ts",
+    "build": "bun build --compile --minify-whitespace --minify-syntax --target bun --outfile server ./src/index.ts"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "type": "commonjs",
-  "description": "",
   "dependencies": {
-    "json-server": "^1.0.0-beta.3"
-  }
+    "@elysiajs/cors": "^1.1.1",
+    "@elysiajs/jwt": "^1.1.1",
+    "@elysiajs/static": "^1.1.1",
+    "bcrypt": "^5.1.1",
+    "bun-sqlite-migrations": "^1.0.2",
+    "elysia": "latest"
+  },
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
+    "bun-types": "latest"
+  },
+  "module": "src/index.js"
 }
